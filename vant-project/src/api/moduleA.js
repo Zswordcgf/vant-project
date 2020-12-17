@@ -10,8 +10,10 @@ const post = (url, params, config = {}) => {
         config
     })
 }
-export default {
+const moduleA = {
     testA(params) {
         return post('testModuleA', params)
     }
 }
+
+export default moduleA;

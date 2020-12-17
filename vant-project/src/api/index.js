@@ -26,5 +26,8 @@ export default {
     'moduleA': moduleA,
     testApi(params) {
         return post('test/test.do', params)
+    },
+    testGet() {
+        return get('get.do')
     }
 }

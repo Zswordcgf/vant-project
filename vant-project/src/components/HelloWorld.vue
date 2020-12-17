@@ -15,6 +15,7 @@ export default {
   },
   methods: {
     test() {
+      console.log(this);
       this.$http.moduleA.testA().then((res) => {
         console.log(res);
       });
