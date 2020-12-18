@@ -1,12 +1,55 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view />
+    <van-tabbar route>
+      <van-tabbar-item
+        replace
+        v-for="(e, i) in menus"
+        :key="i"
+        :to="e.to"
+        :name="e.value"
+        :icon="e.icon"
+        >{{ e.name }}</van-tabbar-item
+      >
+    </van-tabbar>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      menus: [
+        {
+          name: "看板",
+          value: 1,
+          to: "/charts",
+          icon: "home-o",
+        },
+        {
+          name: "管理",
+          value: 2,
+          to: "/manage",
+          icon: "setting-o",
+        },
+        {
+          name: "视图",
+          value: 3,
+          to: "/view",
+          icon: "search",
+        },
+        {
+          name: "我的",
+          value: 4,
+          to: "/my",
+          icon: "friends-o",
+        },
+      ],
+    };
+  },
+  methods: {},
+};
+</script>
 
 <style>
 #app {
